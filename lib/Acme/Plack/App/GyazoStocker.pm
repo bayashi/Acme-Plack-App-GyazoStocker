@@ -1,7 +1,7 @@
 package Acme::Plack::App::GyazoStocker;
 use strict;
 use warnings;
-use Carp qw/croak/;
+use Carp qw/croak carp/;
 use HTTP::Status qw//;
 use LWP::UserAgent;
 use Plack::App::File;
@@ -89,13 +89,18 @@ sub root {
 sub _fetch_image {
     my ($self, $image_file) = @_;
 
-    my $res = $self->ua->get($self->gyazo. $image_file);
+    my $url = $self->gyazo. $image_file;
+
+    my $res = $self->ua->get($url);
 
     if ($res->is_success) {
         return $res->content;
     }
+    else {
+        carp $res->satus_line. ": $url";
+    }
 
-    return; # TODO: error
+    return;
 }
 
 sub image {
