@@ -18,7 +18,7 @@ use Plack::Util::Accessor qw/
 our $VERSION = '0.01';
 
 my @ROUTE = (
-    [ 'root',  qr!^/[a-f\d]{32}(?:\.png)?$!       ],
+    [ 'root',  qr!^/[a-f\d]{32}(?:\.png)?$!  ],
     [ 'image', qr!^/image/[a-f\d]{32}\.png$! ],
 );
 
