@@ -170,6 +170,25 @@ Then an image saves your local directory and your client is redirected to the im
 See C<example/stock.psgi> for more details.
 
 
+=head1 METHODS
+
+=over 4
+
+=item prepare_app
+
+=item call
+
+=item root
+
+save an image and redirect to the image viewer path
+
+=item image
+
+view an image
+
+=back
+
+
 =head1 REPOSITORY
 
 Acme::Plack::App::GyazoStocker is hosted on github
