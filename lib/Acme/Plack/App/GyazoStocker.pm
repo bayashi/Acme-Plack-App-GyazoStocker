@@ -15,7 +15,7 @@ use Plack::Util::Accessor qw/
     gyazo
 /;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my @ROUTE = (
     [ 'root',  qr!^/[a-f\d]{32}(?:\.png)?$!  ],
