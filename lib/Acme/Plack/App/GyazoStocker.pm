@@ -147,17 +147,27 @@ __END__
 
 =head1 NAME
 
-Acme::Plack::App::GyazoStocker - one line description
+Acme::Plack::App::GyazoStocker - save Gyazo like images to local
 
 
 =head1 SYNOPSIS
 
+    use Plack::Builder;
     use Acme::Plack::App::GyazoStocker;
+
+    builder {
+        Acme::Plack::App::GyazoStocker->new(image_dir => './image/')->to_app;
+    };
 
 
 =head1 DESCRIPTION
 
-Acme::Plack::App::GyazoStocker is
+Acme::Plack::App::GyazoStocker is the stocker from Gyazo like images.
+
+When you upload an image to Gyazo, you access to same path of C<Acme::Plack::App::GyazoStocker> app.
+Then an image saves your local directory and your client is redirected to the image viewer path ( /image/***.png ) on C<Acme::Plack::App::GyazoStocker>.
+
+See C<example/stock.psgi> for more details.
 
 
 =head1 REPOSITORY
@@ -174,6 +184,8 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 
 =head1 SEE ALSO
+
+<https://gyazo.com/>
 
 L<Plack::Component>
 
