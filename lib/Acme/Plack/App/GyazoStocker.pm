@@ -97,7 +97,7 @@ sub _fetch_image {
         return $res->content;
     }
     else {
-        carp $res->satus_line. ": $url";
+        carp $res->status_line. ": $url";
     }
 
     return;
